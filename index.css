@@ -6,8 +6,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #1C2F38;
+    padding-top: 5%;
+    background-color: #007AB7;
     color: white;
+    overflow: hidden;
 }
 
 .content{
