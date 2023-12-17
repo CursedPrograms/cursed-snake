@@ -1,53 +1,67 @@
+:root {
+    --primary-bg-color: #007AB7;
+    --primary-text-color: white;
+    --info-bg-color: #1E5A78;
+    --board-bg-color: #1E5A78;
+    --cell-bg-color: #1C2F38;
+    --snake-color: #007AB7;
+    --food-color: #B86600;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     padding-top: 5%;
-    background-color: #007AB7;
-    color: white;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
     overflow: hidden;
-}
-
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    align-content: center;
 }
 
 #instructions {
     font-size: 18px;
     margin-top: 10px;
+    
 }
 
 #game-board {
     display: grid;
     grid-template-columns: repeat(20, 20px);
     gap: 1px;
-    background-color: #1E5A78;
-    border: 1px solid  #1E5A78;
+    background-color: var(--board-bg-color);
+    border: 1px solid var(--board-bg-color);
 }
 
-.content{
+.info{
+    width: 350px;
+    height: 100px;
+    margin: 3px;
+    padding-top: 2px;
+    display: block;
+    background-color: var(--info-bg-color);
+}
+
+.content {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cell {
     width: 20px;
     height: 20px;
-    background-color: #1C2F38;
+    background-color: var(--cell-bg-color);
 }
 
 .snake {
-    background-color: #007AB7;
+    background-color: var(--snake-color);
 }
 
 .food {
-    background-color: #B86600;
+    background-color: var(--food-color);
 }
