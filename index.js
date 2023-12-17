@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     const board = document.getElementById('game-board');
+    const scoreDisplay = document.getElementById('score');
+    const highScoreDisplay = document.getElementById('highScore');
     const gridSize = 20;
     let snake = [{ x: 10, y: 10 }];
     let food = { x: 5, y: 5 };
     let direction = 'right';
+    let score = 0;
+    let highScore = parseInt(localStorage.getItem('highScore')) || 0;
+    let gameRunning = false;
 
     function createBoard() {
         for (let row = 0; row < gridSize; row++) {
@@ -39,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearBoard();
         drawSnake();
         drawFood();
+        updateScore();
     }
 
     function moveSnake() {
@@ -62,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
         snake.unshift(head);
 
         if (head.x === food.x && head.y === food.y) {
+            score++;
+            updateHighScore();
             food = {
                 x: Math.floor(Math.random() * gridSize),
                 y: Math.floor(Math.random() * gridSize)
@@ -80,37 +88,70 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleKeyPress(event) {
-        switch (event.key) {
-            case 'ArrowUp':
-                direction = 'up';
-                break;
-            case 'ArrowDown':
-                direction = 'down';
-                break;
-            case 'ArrowLeft':
-                direction = 'left';
-                break;
-            case 'ArrowRight':
-                direction = 'right';
-                break;
+        if (!gameRunning && event.code === 'Space') {
+            startGame();
+            instructions.style.display = 'none';
+        } else {
+            switch (event.key) {
+                case 'ArrowUp':
+                    direction = 'up';
+                    break;
+                case 'ArrowDown':
+                    direction = 'down';
+                    break;
+                case 'ArrowLeft':
+                    direction = 'left';
+                    break;
+                case 'ArrowRight':
+                    direction = 'right';
+                    break;
+            }
         }
     }
 
     function gameLoop() {
-        moveSnake();
-        if (checkCollision()) {
-            alert('Game over!');
-            resetGame();
+        if (gameRunning) {
+            moveSnake();
+            if (checkCollision()) {
+                endGame();
+                alert('Game over!');
+                resetGame();
+            }
+            update();
         }
-        update();
     }
 
     function resetGame() {
+        gameRunning = false;
         snake = [{ x: 10, y: 10 }];
         food = { x: 5, y: 5 };
         direction = 'right';
-        clearBoard();
-        update();
+        score = 0;
+        updateScore();
+        updateHighScore();
+    }
+
+    function updateScore() {
+        scoreDisplay.innerText = `Score: ${score}`;
+    }
+
+    function updateHighScore() {
+        if (score > highScore) {
+            highScore = score;
+            localStorage.setItem('highScore', highScore);
+            highScoreDisplay.innerText = `High Score: ${highScore}`;
+        }
+    }
+
+    function startGame() {
+        gameRunning = true;
+        score = 0;
+        updateScore();
+        updateHighScore();
+    }
+
+    function endGame() {
+        gameRunning = false;
     }
 
     createBoard();

@@ -21,6 +21,11 @@ body {
     align-content: center;
 }
 
+#instructions {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
 #game-board {
     display: grid;
     grid-template-columns: repeat(20, 20px);
