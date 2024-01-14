@@ -1,3 +1,9 @@
+<div align="center">
+  <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=white"/>
+  <img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23323330.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
+  <img alt="CSS3" src="https://img.shields.io/badge/css3%20-%23323330.svg?&style=for-the-badge&logo=css3&logoColor=white"/>
+</div>
+
 # Cursed Snake
 
 Cursed Snake is a simple Snake game built using HTML, JavaScript, and CSS. This project hosts the files for the game, and you can play it online by visiting [Cursed Snake](https://cursedprograms.github.io/cursed-snake/).
