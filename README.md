@@ -39,10 +39,6 @@ Check out the live demo: [Cursed Snake Demo](https://cursedprograms.github.io/cu
 - JavaScript
 - CSS
 
-## Contributing
-
-If you're interested in contributing to Cursed Snake, feel free to fork the repository and submit a pull request. Contributions are always welcome!
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
