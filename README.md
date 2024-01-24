@@ -20,6 +20,8 @@ Cursed Snake is a simple Snake game built using HTML, JavaScript, and CSS. This 
 
 Check out the live demo: [Cursed Snake Demo](https://cursedprograms.github.io/cursed-snake/)
 
+![Cursed Snake](https://github.com/CursedPrograms/cursed-snake/raw/main/cursed-snake.png)
+
 ## Features
 
 - **Classic Snake Gameplay:** Navigate the snake to eat food and grow longer.
