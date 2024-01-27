@@ -36,7 +36,7 @@ body {
     margin: 3px;
     padding-top: 2px;
     display: block;
-    background-color: var(--cell-bg-color);
+    background-color: var(--board-bg-color);
 }
 
 .cell {
