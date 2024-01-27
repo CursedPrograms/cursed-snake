@@ -1,30 +1,25 @@
+@import url('https://cursedprograms.github.io/cursedentertainment/styles/main-style.css');
+
 :root {
-    --primary-bg-color: #007AB7;
-    --primary-text-color: white;
-    --info-bg-color: #1E5A78;
-    --board-bg-color: #1E5A78;
-    --cell-bg-color: #1C2F38;
-    --snake-color: #007AB7;
+    --primary-bg-color: var(--color-secondary);
+    --primary-text-color: var(--color-text);
+    --info-bg-color: var(--color-primary-light);
+    --board-bg-color: var(--color-primary);
+    --cell-bg-color: var(--color-light-grey);
+    --snake-color: var(--color-secondary);
     --food-color: #B86600;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     padding-top: 5%;
-    background-color: var(--primary-bg-color);
-    color: var(--primary-text-color);
     overflow: hidden;
 }
 
 #instructions {
     font-size: 18px;
     margin-top: 10px;
-    
 }
 
 #game-board {
@@ -35,21 +30,13 @@ body {
     border: 1px solid var(--board-bg-color);
 }
 
-.info{
+.info {
     width: 350px;
     height: 100px;
     margin: 3px;
     padding-top: 2px;
     display: block;
     background-color: var(--info-bg-color);
-}
-
-.content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .cell {
